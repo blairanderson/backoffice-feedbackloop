@@ -1,0 +1,47 @@
+
+// Variables
+@import "variables.scss";
+
+// Mixins
+@import "mixins.scss";
+
+.fbl-chat-nmspc {
+  margin: 0;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  height: 100vh;
+  width: 100vw;
+  max-width: 370px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 10000;
+  box-shadow: -2px 0px 5px 0px rgba(0,0,0,0.3);
+
+  // Normalize & Base CSS
+  @import "normalize.scss";
+  @import "base.scss";
+  @import "type.scss";
+
+  // Components
+  @import "buttons.scss";
+  @import "bars.scss";
+  @import "badges.scss";
+  @import "cards.scss";
+  @import "table-views.scss";
+  @import "forms.scss";
+  @import "input-table";
+  @import "segmented-controls.scss";
+  @import "popovers.scss";
+
+  // Javascript components
+  @import "modals.scss";
+  @import "sliders.scss";
+  @import "toggles.scss";
+  @import "push.scss";
+
+  // Ratchicons
+  //@import "ratchicons.scss";
+}

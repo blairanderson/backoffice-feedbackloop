@@ -1,0 +1,158 @@
+//
+// Table views
+// --------------------------------------------------
+
+.fbl-table-view {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: $bar-base-height;
+  list-style: none; // Remove usual bullet styles from table view
+  background-color: #fff;
+  border-top: none;
+  border-bottom: none;
+}
+
+// Pad each table view item and add dividers
+.fbl-table-view-cell {
+  position: relative;
+  display: flex;
+  padding: 11px 11px 11px 11px;
+  overflow: hidden;
+  border-bottom: none;
+  p {
+    margin-bottom: 0;
+  }
+
+  &.fbl-right {
+    justify-content: flex-end;
+  }
+}
+
+.fbl-radius-25 {
+  border-radius: 25px;
+}
+
+.fbl-media-body {
+  font-size: 14px;
+  padding: 5px 10px;
+  &.fbl-left {
+    background-color: #E4E4E4;
+    color: black;
+
+    &:before {
+      content:"";
+      position:absolute;
+      z-index: -2;
+      bottom: 8px;
+      left: 50px;
+      height:20px;
+      border-left:20px solid #E4E4E4;
+      border-bottom-right-radius: 16px 14px;
+      -webkit-transform:translate(0, -2px);
+    }
+
+    &:after {
+      content:"";
+      position:absolute;
+      z-index: -1;
+      bottom: 8px;
+      left: 60px;
+      width:26px;
+      height:20px;
+      background:white;
+      border-bottom-right-radius: 10px;
+      -webkit-transform:translate(-30px, -2px);
+    }
+  }
+  &.fbl-right {
+    background-color: #0084FF;
+    color: #f3f3f3;
+    &:before {
+      content:"";
+      position:absolute;
+      z-index:-1;
+      bottom: 5px;
+      right: 0px;
+      height:20px;
+      border-right:20px solid #0084FF;
+      border-bottom-left-radius: 16px 14px;
+      -webkit-transform:translate(0, -2px);
+    }
+
+    &:after {
+      content:"";
+      position:absolute;
+      z-index:1;
+      bottom: 5px;
+      right:-45px;
+      width:26px;
+      height:20px;
+      background:white;
+      border-bottom-left-radius: 10px;
+      -webkit-transform:translate(-30px, -2px);
+    }
+  }
+}
+
+
+// Table view dividers
+// --------------------------------------------------
+
+.fbl-table-view-divider {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 15px;
+  margin-top: -1px; // Hides the border of the previous list item
+  margin-left: 0;
+  font-weight: $font-weight;
+  color: #999;
+  background-color: #fafafa;
+  border-top: $border-default;
+  border-bottom: $border-default;
+}
+
+
+// Table-views with media (images,avatars, icons)
+// --------------------------------------------------
+
+.fbl-table-view .fbl-media,
+.fbl-table-view .fbl-media-body {
+  overflow: hidden;
+}
+.fbl-table-view .fbl-media-object {
+  &.fbl-pull-left {
+    margin-right: 10px;
+  }
+  &.fbl-pull-right {
+    margin-left: 10px;
+  }
+}
+
+
+
+
+// Table-views with buttons, badges and toggles
+// --------------------------------------------------
+.fbl-table-view-cell,
+.fbl-table-view-cell > a {
+  > .fbl-btn,
+  > .fbl-badge,
+  > .fbl-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    @include transform(translateY(-50%));
+  }
+
+  // If the cell has a chevron, give some more room.fbl-
+  .fbl-navigate-left,
+  .fbl-navigate-right,
+  .fbl-push-left,
+  .fbl-push-right {
+    > .fbl-btn,
+    > .fbl-badge,
+    > .fbl-toggle {
+      right: 35px;
+    }
+  }
+}

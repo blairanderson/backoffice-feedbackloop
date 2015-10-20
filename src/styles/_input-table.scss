@@ -1,0 +1,89 @@
+//
+// Input groups
+// --------------------------------------------------
+
+// Base styles
+// -------------------------
+.fbl-input-table {
+  position: relative; // For dropdowns
+  display: table;
+  border-collapse: separate; // prevent input groups from inheriting border styles from table cells when placed within a table
+
+  // Undo padding and float of grid classes
+  &[class*="col-"] {
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .fbl-input-table-input {
+    // Ensure that the input is always above the *appended* addon button for
+    // proper border colors.fbl-
+    position: relative;
+    z-index: 2;
+
+    // IE9 fubars the placeholder attribute in text inputs and the arrows on
+    // select elements in input groups.fbl- To fix it, we float the input.fbl- Details:
+    // https://github.fbl-com/twbs/bootstrap/issues/11561#issuecomment-28936855
+    float: left;
+
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+}
+
+// Display as table-cell
+// -------------------------
+.fbl-input-table-addon,
+.fbl-input-table-btn,
+.fbl-input-table .fbl-input-table-input {
+  display: table-cell;
+}
+// Addon and addon wrapper for buttons
+.fbl-input-table-addon,
+.fbl-input-table-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle; // Match the inputs
+}
+
+
+// Button input groups
+// -------------------------
+.fbl-input-table-btn {
+  position: relative;
+  // Jankily prevent input button groups from wrapping with `white-space` and
+  // `font-size` in combination with `inline-block` on buttons.fbl-
+  font-size: 0;
+  white-space: nowrap;
+
+  // Negative margin for spacing, position for bringing hovered/focused/actived
+  // element above the siblings.fbl-
+  > .fbl-btn {
+    position: relative;
+    + .fbl-btn {
+      margin-left: -1px;
+    }
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active {
+      z-index: 2;
+    }
+  }
+
+  // Negative margin to only have a 1px border between the two
+  &:first-child {
+    > .fbl-btn,
+    > .fbl-btn-group {
+      margin-right: -1px;
+    }
+  }
+  &:last-child {
+    > .fbl-btn,
+    > .fbl-btn-group {
+      margin-left: -1px;
+    }
+  }
+}

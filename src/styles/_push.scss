@@ -1,0 +1,63 @@
+//
+// Push styles (to be used with push.fbl-js)
+// --------------------------------------------------
+
+.fbl-content {
+  // Fade animation
+  &.fbl-fade {
+    left: 0;
+    opacity: 0;
+
+    &.fbl-in {
+      opacity: 1;
+    }
+  }
+
+  // Slide animation
+  &.fbl-sliding {
+    z-index: 2;
+    -webkit-transition: -webkit-transform .4s;
+       -moz-transition: -moz-transform .4s;
+            transition: transform .4s;
+    @include transform(translate3d(0, 0, 0));
+
+    &.fbl-left {
+      z-index: 1;
+      @include transform(translate3d(-100%, 0, 0));
+    }
+
+    &.fbl-right {
+      z-index: 3;
+      @include transform(translate3d(100%, 0, 0));
+    }
+  }
+}
+
+// Add chevrons to elements
+.fbl-navigate-left,
+.fbl-navigate-right,
+.fbl-push-left,
+.fbl-push-right {
+  &:after {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    font-family: Ratchicons;
+    font-size: inherit;
+    line-height: 1;
+    color: #bbb;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    @include transform(translateY(-50%));
+  }
+}
+.fbl-navigate-left:after,
+.fbl-push-left:after {
+  left: 15px;
+  content: '\e822';
+}
+.fbl-navigate-right:after,
+.fbl-push-right:after{
+  right: 15px;
+  content: '\e826';
+}

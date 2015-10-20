@@ -1,0 +1,46 @@
+//
+// Cards
+// --------------------------------------------------
+
+.fbl-card {
+  margin: $bar-side-spacing;
+  overflow: hidden;
+  background-color: $card-bg;
+  border: $border-default;
+  border-radius: $border-radius;
+}
+
+
+// Cards with table-views
+// --------------------------------------------------
+.fbl-card .fbl-table-view {
+  margin-bottom: 0;
+  border-top: 0;
+  border-bottom: 0;
+
+  // Rounding first divider on carded lists and remove border on the top
+  .fbl-table-view-divider:first-child {
+    top: 0;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  // Rounding last divider on carded table views
+  .fbl-table-view-divider:last-child {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}
+// Remove the bottom border from last table cell
+.fbl-card .fbl-table-view-cell:last-child {
+  border-bottom: 0;
+}
+
+.fbl-table-view-cell-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.fbl-table-view-cell-enter.fbl-table-view-cell-enter-active {
+  opacity: 1;
+}

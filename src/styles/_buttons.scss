@@ -1,0 +1,174 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.fbl-btn {
+  position: relative;
+  display: inline-block;
+  padding: 6px 8px 7px;
+  margin-bottom: 0; // For input.fbl-btn
+  font-size: $button-font-size;
+  font-weight: $font-weight-light;
+  line-height: 1;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: top;
+  cursor: pointer;
+  background-color: $chrome-color;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+
+  // Active & filled button styles
+  &:active,
+  &.fbl-active {
+    color: inherit; // Overriding the gloabl style for all anchors.fbl-
+    background-color: #ccc;
+  }
+
+  // Disabled styles & filled button active styles
+  &:disabled,
+  &.fbl-disabled {
+    opacity: .6;
+  }
+}
+
+
+// Other button types
+// --------------------------------------------------
+
+// Primary button (Default color is blue)
+.fbl-btn-primary {
+  color: #fff;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+
+  &:active,
+  &.fbl-active {
+    color: #fff;
+    background-color: darken($primary-color, 10%);
+    border: 1px solid darken($primary-color, 10%);
+  }
+}
+
+// Positive button (Default color is green)
+.fbl-btn-positive {
+  color: #fff;
+  background-color: $positive-color;
+  border: 1px solid $positive-color;
+
+  &:active,
+  &.fbl-active {
+    color: #fff;
+    background-color: darken($positive-color, 10%);
+    border: 1px solid darken($positive-color, 10%);
+  }
+}
+
+// Negative button (Default color is red)
+.fbl-btn-negative {
+  color: #fff;
+  background-color: $negative-color;
+  border: 1px solid $negative-color;
+
+  &:active,
+  &.fbl-active {
+    color: #fff;
+    background-color: darken($negative-color, 10%);
+    border: 1px solid darken($negative-color, 10%);
+  }
+}
+
+// Outlined buttons
+.fbl-btn-outlined {
+  background-color: transparent;
+
+  &.fbl-btn-primary {
+    color: $primary-color;
+  }
+  &.fbl-btn-positive {
+    color: $positive-color;
+  }
+  &.fbl-btn-negative {
+    color: $negative-color;
+  }
+  // Active states
+  &.fbl-btn-primary:active,
+  &.fbl-btn-positive:active,
+  &.fbl-btn-negative:active {
+    color: #fff;
+  }
+}
+
+// Link button (Buttons that look like links)
+.fbl-btn-link {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: $primary-color;
+  background-color: transparent;
+  border: 0;
+
+  &:active,
+  &.fbl-active {
+    color: darken($primary-color, 10%);
+    background-color: transparent;
+  }
+}
+
+// Block level buttons (full width buttons)
+.fbl-btn-block {
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+
+// Button overrides
+// --------------------------------------------------
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  width: 100%;
+}
+
+
+// Buttons with badges
+// --------------------------------------------------
+
+// Generic styles for all badges within default buttons
+.fbl-btn .fbl-badge {
+  margin: -2px -4px -2px 4px;
+  font-size: 12px;
+  background-color: rgba(0,0,0,.15);
+}
+
+// Buttons with inverted badges
+.fbl-btn .fbl-badge-inverted,
+.fbl-btn:active .fbl-badge-inverted {
+  background-color: transparent;
+}
+.fbl-btn-primary:active .fbl-badge-inverted,
+.fbl-btn-positive:active .fbl-badge-inverted,
+.fbl-btn-negative:active .fbl-badge-inverted {
+  color: #fff;
+}
+
+// Position badges within block level buttons
+// Note: These are absolutely positioned so that text of button isn't "pushed" by badge and always
+// stays at the center of button
+.fbl-btn-block .fbl-badge {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
+
+
+// Buttons with Ratchicons
+// --------------------------------------------------
+
+.fbl-btn .fbl-icon {
+  font-size: inherit;
+}
